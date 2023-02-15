@@ -5,39 +5,32 @@
 using namespace std;
 int main()
 {
+    int pole[10];
     int n;
-    bool rostouci = true;
-
-    // Načtení délky posloupnosti
-    cout << "Zadejte delku posloupnosti: ";
+    cout << "Zadej pocet prvku posloupnosti, maximalne 10: ";
     cin >> n;
+    cout << "Zadavej cela cisla: ";
+    for (int i = 0; i < n; ++i)
+    {
+        cin >> pole[i];
 
-    // Vytvoření pole pro posloupnost
-    int posloupnost[n];
-
-    // Načtení posloupnosti do pole
-    cout << "Zadejte " << n << " cisel: ";
-    for (int i = 0; i < n; i++) {
-        cin >> posloupnost[i];
     }
-
-    // Kontrola, zda prvky v poli tvoří rostoucí posloupnost
-    for (int i = 1; i < n; i++) {
-        if (posloupnost[i] <= posloupnost[i - 1]) {
-            rostouci = false;
-            break;
+    bool jeRostouci = true;
+    for (int i = 1; i < n; i++)
+    {
+        if (pole[i] <= pole[i - 1])
+        {
+            jeRostouci = false;
         }
     }
-
-    // Výstup
-    if (rostouci) {
-        cout << "Prvky v poli tvori rostouci posloupnost." << endl;
+    if (jeRostouci)
+    {
+        cout << "\nAno pole je rostouci";
     }
-    else {
-        cout << "Prvky v poli netvori rostouci posloupnost." << endl;
+    else
+    {
+        cout << "Pole neni rostouci" << endl;
     }
-
-    return 0;
 }
 
 // Spuštění programu: Ctrl+F5 nebo nabídka Ladit > Spustit bez ladění
